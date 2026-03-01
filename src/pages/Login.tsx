@@ -58,7 +58,7 @@ const Login = () => {
             ESGIS Library
           </h1>
           <p className="text-muted-foreground text-lg">
-            Système de gestion de bibliothèque universitaire
+            Système de gestion de bibliothèque universitaire développé par AFELI YB
           </p>
         </div>
         <div className="grid grid-cols-1 gap-4 mt-8 w-full max-w-sm">

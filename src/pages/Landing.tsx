@@ -265,7 +265,7 @@ export default function Landing() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-medium mb-8"
           >
             <Sparkles className="h-3 w-3" />
-            Système de gestion de bibliothèque moderne
+            Système de gestion de bibliothèque moderne développé par AFELI YB
           </motion.div>
 
           <motion.h1
@@ -583,8 +583,7 @@ export default function Landing() {
           <span className="font-semibold text-white">ESGIS Library</span>
         </div>
         <p>
-          © {new Date().getFullYear()} ESGIS Library — Gestion de bibliothèque
-          moderne
+          © {new Date().getFullYear()} ESGIS Library — Developed by AFELI YB
         </p>
       </footer>
     </div>

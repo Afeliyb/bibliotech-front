@@ -145,7 +145,7 @@ const Index = () => {
         <StatsCard
           title="Livres"
           value={loading || !stats ? "..." : stats.total_books.toLocaleString()}
-          change="+124 ce mois"
+          change="+8 ce mois"
           changeType="positive"
           icon={BookOpen}
           glowColor="primary"
@@ -155,7 +155,7 @@ const Index = () => {
           value={
             loading || !stats ? "..." : stats.total_members.toLocaleString()
           }
-          change="+48 ce mois"
+          change="+4 ce mois"
           changeType="positive"
           icon={Users}
           glowColor="accent"
@@ -165,7 +165,7 @@ const Index = () => {
           value={
             loading || !stats ? "..." : stats.active_borrowings.toLocaleString()
           }
-          change="-12 aujourd'hui"
+          change="-3 aujourd'hui"
           changeType="neutral"
           icon={ArrowLeftRight}
           glowColor="success"
@@ -173,7 +173,7 @@ const Index = () => {
         <StatsCard
           title="Pénalités"
           value={loading || !stats ? "..." : stats.penalties.toLocaleString()}
-          change="+3 cette semaine"
+          change="+2 cette semaine"
           changeType="negative"
           icon={AlertTriangle}
           glowColor="destructive"
