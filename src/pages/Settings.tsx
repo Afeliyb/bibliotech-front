@@ -7,9 +7,12 @@ import { useAuth } from "@/context/AuthContext";
 import { updateUser, getUsers } from "@/lib/api";
 import { toast } from "@/hooks/use-toast";
 import { Camera, User, Mail, Lock, Save } from "lucide-react";
+import { useTheme } from "@/context/ThemeContext";
+import { Moon, Sun } from "lucide-react";
 
 export default function Settings() {
   const { user, updateProfile } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const [name, setName] = useState(user?.name || "");
   const [email, setEmail] = useState(user?.email || "");
   const [password, setPassword] = useState("");
@@ -93,6 +96,28 @@ export default function Settings() {
     <div className="space-y-6 max-w-xl">
       <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
         <h1 className="text-2xl font-display font-bold">Paramètres</h1>
+        <Card className="border-border/50">
+  <CardContent className="p-5">
+    <div className="flex items-center justify-between">
+      <div>
+        <p className="font-medium">Apparence</p>
+        <p className="text-sm text-muted-foreground mt-0.5">
+          {theme === "dark" ? "Mode sombre activé" : "Mode clair activé"}
+        </p>
+      </div>
+      <button
+        onClick={toggleTheme}
+        className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border/50 hover:border-primary/50 transition-all"
+      >
+        {theme === "dark" ? (
+          <><Sun className="h-4 w-4 text-amber-400" /> Passer au clair</>
+        ) : (
+          <><Moon className="h-4 w-4 text-primary" /> Passer au sombre</>
+        )}
+      </button>
+    </div>
+  </CardContent>
+</Card>
         <p className="text-sm text-muted-foreground mt-1">Gérez vos informations personnelles</p>
       </motion.div>
 

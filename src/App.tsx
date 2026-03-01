@@ -45,7 +45,6 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
         <AuthProvider>
           <Routes>
             {/* Public routes */}
@@ -78,7 +77,6 @@ const App = () => (
             />
           </Routes>
         </AuthProvider>
-      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );

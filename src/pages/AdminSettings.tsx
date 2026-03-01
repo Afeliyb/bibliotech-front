@@ -4,7 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
-import { Building, Clock, BookOpen, AlertTriangle, Users } from "lucide-react";
+import { Building, Clock, BookOpen, AlertTriangle, Users, Moon, Sun } from "lucide-react";
+import { useTheme } from "@/context/ThemeContext";
 
 const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
@@ -25,6 +26,7 @@ const AdminSettings = () => {
   const [stats, setStats] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     Promise.all([
@@ -83,6 +85,36 @@ const AdminSettings = () => {
           Configuration générale de la bibliothèque
         </p>
       </motion.div>
+      {/* Apparence */}
+      <Card className="border-border/50">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-sm flex items-center gap-2">
+            {theme === "dark"
+              ? <Moon className="h-4 w-4 text-primary" />
+              : <Sun className="h-4 w-4 text-amber-400" />}
+            Apparence
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium">Thème de l'interface</p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {theme === "dark" ? "Mode sombre activé" : "Mode clair activé"}
+              </p>
+            </div>
+            <button
+              onClick={toggleTheme}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border/50 hover:border-primary/50 transition-all text-sm"
+            >
+              {theme === "dark"
+                ? <><Sun className="h-4 w-4 text-amber-400" /> Mode clair</>
+                : <><Moon className="h-4 w-4 text-primary" /> Mode sombre</>}
+            </button>
+          </div>
+        </CardContent>
+      </Card>
+
 
       {/* Informations de la bibliothèque */}
       <Card className="border-border/50">

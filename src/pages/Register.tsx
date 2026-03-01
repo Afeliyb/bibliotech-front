@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuth } from "@/context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -6,6 +7,7 @@ import EsgisLogo from "@/components/EsgisLogo";
 
 const Register = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -56,7 +58,14 @@ const Register = () => {
         else setError(data.detail || "Erreur lors de l'inscription.");
         return;
       }
-      navigate("/login", { state: { registered: true } });
+      const data = await res.json();
+      login({
+        id: data.id,
+        role: data.role,
+        name: data.name,
+        email: data.email,
+        profile_picture: data.profile_picture ?? null,
+      });
     } catch (err) {
       setError("Erreur réseau. Veuillez réessayer.");
     } finally {
@@ -69,7 +78,7 @@ const Register = () => {
       <div className="w-full max-w-md space-y-6">
         <div className="flex items-center justify-center gap-3">
           <EsgisLogo size={36} />
-<h1 className="text-2xl font-display font-bold">ESGIS Library</h1>
+          <h1 className="text-2xl font-display font-bold">ESGIS Library</h1>
         </div>
 
         <div className="space-y-1 text-center">

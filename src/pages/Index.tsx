@@ -6,15 +6,11 @@ import {
   Users,
   ArrowLeftRight,
   AlertTriangle,
-  TrendingUp,
-  Clock,
-  BookMarked,
-  Bell,
+  
 } from "lucide-react";
 import StatsCard from "@/components/StatsCard";
 import BookCard from "@/components/BookCard";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent,} from "@/components/ui/card";
 
 const recentBooks = [
   {
@@ -24,7 +20,8 @@ const recentBooks = [
       "https://actualitte.com/uploads/images/duune-8e8c19e2-30d3-47c5-b624-c0849c2008c5.jpg",
     genre: "Science-Fiction",
     rating: 4.8,
-    available: true,
+    total_copies: 2, 
+    available_copies: 2,
   },
   {
     title: "1984",
@@ -33,7 +30,8 @@ const recentBooks = [
       "https://images.epagine.fr/100/9782070248100_1_75.jpg",
     genre: "Dystopie",
     rating: 4.7,
-    available: false,
+    total_copies: 1,
+     available_copies: 0,
   },
   {
     title: "Le Petit Prince",
@@ -42,7 +40,8 @@ const recentBooks = [
       "https://m.media-amazon.com/images/I/914RHT4YJaL._SX500_.jpg",
     genre: "Conte",
     rating: 4.9,
-    available: true,
+    total_copies: 3, 
+    available_copies: 3
   },
   {
     title: "L'Étranger",
@@ -51,7 +50,8 @@ const recentBooks = [
       "https://i.pinimg.com/564x/6f/fa/4e/6ffa4ecd1931e36640110d801f4e8483.jpg",
     genre: "Roman",
     rating: 4.5,
-    available: true,
+    total_copies: 2, 
+    available_copies: 2,
   },
 ];
 
