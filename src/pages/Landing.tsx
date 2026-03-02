@@ -310,8 +310,8 @@ export default function Landing() {
             <Link to="/login">
               <Button
                 size="lg"
-                variant="outline"
-                className="px-8 text-base border-white/10 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
+                variant="ghost"
+                className="px-8 text-base text-white bg-transparent border border-white/20 hover:bg-white/10 hover:text-white hover:border-primary/50 transition-all duration-300"
               >
                 Se connecter
               </Button>
@@ -566,8 +566,8 @@ export default function Landing() {
             <Link to="/login">
               <Button
                 size="lg"
-                variant="outline"
-                className="border-white/15 hover:border-primary/50 px-10"
+                variant="ghost"
+                className="px-10 text-white bg-transparent border border-white/20 hover:bg-white/10 hover:text-white hover:border-primary/50 transition-all duration-300"
               >
                 J'ai déjà un compte
               </Button>
