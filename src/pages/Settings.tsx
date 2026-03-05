@@ -71,11 +71,11 @@ export default function Settings() {
       if (password) payload.password = password;
 
       const updated = await updateUser(userId, payload);
-      updateProfile({
-        name: updated.name,
-        email: updated.email,
-        profile_picture: updated.profile_picture ?? null,
-      });
+updateProfile({
+  name: updated.name,
+  email: updated.email,
+  profile_picture: preview,  // 👈 on utilise preview directement, pas updated.profile_picture
+});
       setPassword("");
       setConfirmPassword("");
       toast({ title: "Profil mis à jour ✓", description: "Vos informations ont été enregistrées." });
